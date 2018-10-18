@@ -1,0 +1,21 @@
+CREATE DATABASE IntegrityDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'pacopepe'@'localhost' IDENTIFIED BY 'pacopepe';
+GRANT ALL PRIVILEGES ON *.* TO 'pacopepe'@'localhost';
+FLUSH PRIVILEGES;
+USE IntegrityDB;
+CREATE TABLE Hashes (
+	Id INT NOT NULL AUTO_INCREMENT,
+	Name VARCHAR(300),
+	Path VARCHAR(300),
+	Hash VARCHAR(64),
+	Modified VARCHAR(1) DEFAULT "",
+	PRIMARY KEY (Id)
+);
+CREATE TABLE KPI (
+	Id INT NOT NULL AUTO_INCREMENT,
+	Date VARCHAR(22),
+	Rate DOUBLE(4,3),
+	NumOK Int,
+	NumFiles Int,
+	PRIMARY KEY (Id)
+);
